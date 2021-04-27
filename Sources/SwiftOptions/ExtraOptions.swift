@@ -15,6 +15,7 @@ extension Option {
   public static let driverScanDependenciesNonLib: Option = Option("-nonlib-dependency-scanner", .flag, attributes: [.helpHidden], helpText: "Use calls to `swift-frontend -scan-dependencies` instead of dedicated dependency scanning library")
   public static let driverWarnUnusedOptions: Option = Option("-driver-warn-unused-options", .flag, attributes: [.helpHidden], helpText: "Emit warnings for any provided options which are unused by the driver")
   public static let emitModuleSeparately: Option = Option("-experimental-emit-module-separately", .flag, attributes: [.helpHidden], helpText: "Emit module files as a distinct job")
+  public static let forceMergeModule: Option = Option("-force-merge-module", .flag, attributes: [.helpHidden], helpText: "Force using the merge-module incremental build mode instead of the emit-module mode")
   public static let useFrontendParseableOutput: Option = Option("-use-frontend-parseable-output", .flag, attributes: [.helpHidden], helpText: "Emit parseable-output from swift-frontend jobs instead of from the driver")
 
   public static var extraOptions: [Option] {
@@ -24,6 +25,7 @@ extension Option {
       Option.driverScanDependenciesNonLib,
       Option.driverWarnUnusedOptions,
       Option.emitModuleSeparately,
+      Option.forceMergeModule,
       Option.useFrontendParseableOutput
     ]
   }
